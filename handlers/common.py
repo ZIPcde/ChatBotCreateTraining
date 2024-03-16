@@ -4,6 +4,7 @@ import logging
 import random
 from keyboards.keyboards import kb1, kb2
 from utils.random_fox import fox
+from utils.random_cat import cat
 
 
 router = Router()
@@ -34,25 +35,6 @@ async def cmd_fox(message: types.Message):
     await message.answer_photo(photo=img_fox)
 # await message.answer_
 # await bot.send_photo(message.from_user.id, photo=img_fox)
-    
-#Хэндлер на команду /cat
-@dp.message(Command('cat'))
-@dp.message(Command('кот'))
-@dp.message(Command('кота'))
-@dp.message(Command('котов'))
-@dp.message(Command('кошка'))
-@dp.message(Command('кошку'))
-@dp.message(Command('кошек'))
-@dp.message(Command('котенок'))
-@dp.message(Command('котенка'))
-@dp.message(Command('котят'))
-@dp.message(F.text.lower() == 'покажи кота')
-async def cmd_cat(message: types.Message):
-    name = message.chat.first_name
-    img_cat = cat()
-    await message.answer(f'Держи котов, {name}')
-    await message.answer_photo(photo=img_cat)
-# await bot.send_photo(message.from_user.id, photo=img_cat)
 
 
 
